@@ -81,8 +81,19 @@ def main(args):
 	java_executable = get_java_executable(known_args.validate_java_version)
 
 	jdtls_base_path = Path(__file__).parent.parent
+	print(jdtls_base_path)
+
+	# Aquí epero que sea config_mac
 	shared_config_path = get_shared_config_path(jdtls_base_path)
+	print(shared_config_path)
+
+
 	jar_path = find_equinox_launcher(jdtls_base_path)
+	print(jar_path)
+	## Reemplazar por jar_path = ""
+
+	coded_jar_path = "/Users/gezzer/git/coc-java/server/plugins/org.eclipse.equinox.launcher.cocoa.macosx.x86_64_1.2.1100.v20240722-2106.jar"
+
 
 	os.execvp(java_executable,
 		["-Declipse.application=org.eclipse.jdt.ls.core.id1",
@@ -97,6 +108,6 @@ def main(args):
 		"--add-opens", "java.base/java.util=ALL-UNNAMED",
 		"--add-opens", "java.base/java.lang=ALL-UNNAMED"]
 		+ known_args.jvm_arg
-		+ ["-jar", jar_path,
+		+ ["-jar", coded_jar_path,
 		"-data", known_args.data]
 		+ args)
