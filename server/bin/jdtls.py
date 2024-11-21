@@ -105,6 +105,7 @@ def main(args):
 		["-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
+		"-Dlog.level=ALL",
 		"-Dosgi.checkConfiguration=true",
 		"-Dosgi.sharedConfiguration.area=" + str(shared_config_path),
 		"-Dosgi.sharedConfiguration.area.readOnly=true",
